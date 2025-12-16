@@ -1,8 +1,9 @@
-import { PageProps } from "@/.next/types/app/layout";
 import { getMeal } from "@/lib/meals";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+
+type PageProps = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
